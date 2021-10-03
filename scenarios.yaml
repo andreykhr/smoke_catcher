@@ -1,0 +1,36 @@
+smokeapi: 1.0
+tests:
+  - test:
+      name: check_signing_request
+      description: Данный тест проверяет
+      request:
+        server: http://localhost
+        headers:
+          content_type: ""
+          accept: ""
+        body: "qweasdzxc"
+      response:
+        http_code: 201
+        headers:
+          - content_type: "application/json"
+        body:
+          validate_struct: "JSON"
+      output:
+        code: 1
+  - test:
+      name: some test
+      description: Данный тест проверяет
+      request:
+        server: http://localhost
+        headers:
+          content_type: ""
+          accept: ""
+        body: "qweasdzxc"
+      response:
+        http_code: 200
+        headers:
+          - content_type: "application/json"
+        body:
+          validate_struct: "JSON"
+      output:
+        code: 1
