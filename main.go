@@ -11,6 +11,20 @@ import (
 )
 
 func main() {
+
+	//var v11 = new (v1.Checker)
+	//v1:= &v1.Checker{}
+	//v1.Init("esfesef")
+	var checker = v1.Checker{}
+	checker.Init("someName")
+
+	message, err := checker.Check()
+
+	fmt.Println("!!!*** TEST")
+	fmt.Printf("%v",message)
+	fmt.Println()
+	fmt.Println("!!!*** TEST END *** !!!")
+
 	defer fmt.Println("Завершено!")
 
 	scenarioPtr := flag.String("scenario", "foo", "Сценарий тестов на yaml")
