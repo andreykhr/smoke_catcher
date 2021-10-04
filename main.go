@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"smocker_catcher/models/v1"
 )
 
 func main() {
@@ -27,7 +28,7 @@ func main() {
 	log.Println("Scenario Yaml")
 	log.Println(scenarioYaml)
 
-	scenario := Scenario{}
+	scenario := v1.Scenario{}
 
 	err2 := yaml.Unmarshal([]byte(scenarioYaml), &scenario)
 	if err2 != nil {

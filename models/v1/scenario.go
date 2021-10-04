@@ -1,4 +1,4 @@
-package main
+package v1
 
 type Scenario struct {
 	Smokeapi float64 `yaml:"smokeapi"`

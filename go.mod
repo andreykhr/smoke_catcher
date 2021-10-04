@@ -1,4 +1,4 @@
-module test_tool
+module smocker_catcher
 
 go 1.16
 
