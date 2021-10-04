@@ -5,20 +5,26 @@ import (
 	"testing"
 )
 
+type addTest struct {
+	sourceName, sourceExpected string
+}
+
+var addTests = []addTest{
+	{"someName", "someName"},
+	{"anotherName", "anotherName"},
+}
+
 func Test_checker_check(T *testing.T)  {
-	c := Checker{}
+	for _, test := range addTests {
+		c := Checker{}
 
-	c.Init("someName")
+		c.Init(test.sourceName)
 
-	res, err := c.Check()
-	if err != nil {
-		assert.Failf(T, "failureMessage", "msg", err)
+		res, err := c.Check()
+		if err != nil {
+			assert.Failf(T, "failureMessage", "msg", err)
+		}
+
+		assert.Equal(T, test.sourceExpected, res)
 	}
-
-	assert.Equal(T, "someName", res )
-
-
-
-//	T.Errorf("Ошибка")
-//	return
 }
